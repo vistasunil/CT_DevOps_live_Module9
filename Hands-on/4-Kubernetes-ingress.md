@@ -73,7 +73,9 @@ spec:
 
 `kubectl create -f ingress.yaml`
 
-<span style="background-color: #FFFF00">--validate=false Error from server (InternalError): error when creating "endpoint.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": Post https://ingress-nginx-controller-admission.ingress-nginx.svc:443/extensions/v1beta1/ingresses?timeout=30s: context deadline</span>
+If you face any error like below while deploying:
+
+**_--validate=false Error from server (InternalError): error when creating "endpoint.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": Post https://ingress-nginx-controller-admission.ingress-nginx.svc:443/extensions/v1beta1/ingresses?timeout=30s: context deadline_**
 
 `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
 
