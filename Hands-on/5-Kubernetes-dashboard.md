@@ -1,28 +1,3 @@
----
-title: "Testing Watermark"
-author: "John"
-date: "September 18, 2015"
-header-includes:
-   - \usepackage{draftwatermark}
-output:
-  pdf_document
----
-This is some basic text.  
-Note the watermark on this page, and the hidden watermark on the next page.
-
-\newpage
-
-\SetWatermarkText{DRAFT}
-
-```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=7}
-library(ggplot2)
-
-ggplot(mtcars) +
-  geom_point(aes(mtcars$mpg, mtcars$cyl)) +
-  facet_wrap(~carb, ncol=1) + 
-  theme_bw()
-```
-
 <div align="center">
 <img src=https://static.wixstatic.com/media/1c706c_a5df0ad56f894928bf858a74ba744b32~mv2.png/v1/fit/w_2500,h_1330,al_c/1c706c_a5df0ad56f894928bf858a74ba744b32~mv2.png width="400" height="200">
  </div>
