@@ -43,8 +43,8 @@
 1. Use the previous deployment and make it accessible using Ingress
 2. Delete the existing NodePort service and create a ClusterIP service in place of it
 3. Now, create an Ingress object that will route the traffic to this service and hence deployment using two paths as below. Both should map to same backend service and port:
-  1. /app
-  2. /apache
+  - 1. /app
+  - 2. /apache
 
 _**Note: Make sure that Ingress Controller is installed to make ingress work.**_
 
