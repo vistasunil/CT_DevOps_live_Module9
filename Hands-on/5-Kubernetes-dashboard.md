@@ -63,7 +63,7 @@ https://\<ip-address-of-master-or-slave:\<nodeport\>
 
 ```
 # Create service account
-`kubectl create serviceaccount cluster-admin-dashboard-sa`
+kubectl create serviceaccount cluster-admin-dashboard-sa
 
 # Bind ClusterAdmin role to the service account
 kubectl create clusterrolebinding cluster-admin-dashboard-sa \
@@ -71,7 +71,7 @@ kubectl create clusterrolebinding cluster-admin-dashboard-sa \
   --serviceaccount=default:cluster-admin-dashboard-sa
 
 # Parse the token
-`TOKEN=$(kubectl describe secret $(kubectl -n kube-system get secret | awk '/^cluster-admin-dashboard-sa-token-/{print $1}') | awk '$1=="token:"{print $2}')`
+TOKEN=$(kubectl describe secret $(kubectl -n kube-system get secret | awk '/^cluster-admin-dashboard-sa-token-/{print $1}') | awk '$1=="token:"{print $2}')
 ```
 
 ![image](https://user-images.githubusercontent.com/37858762/236333532-31dad5ac-e426-4983-a92d-6837a34962e1.png)
