@@ -32,23 +32,23 @@
 
 ### Complete below tasks as part of this exercise:
 
-1. Create a Kubernetes deployment file to deploy 3 replicas of apache pods
-2. Now expose this deployment using NodePort service
-3. Access this deployment on web browser using NodePort IP and Port
+* Create a Kubernetes deployment file to deploy 3 replicas of apache pods
+* Now expose this deployment using NodePort service
+* Access this deployment on web browser using NodePort IP and Port
 
 ## Exercise 2: Kubernetes ClusterIP Service and Ingress
 
 ### Complete below tasks as part of this exercise:
 
-1. Use the previous deployment and make it accessible using Ingress
-2. Delete the existing NodePort service and create a ClusterIP service in place of it
-3. Now, create an Ingress object that will route the traffic to this service and hence deployment using two paths as below. Both should map to same backend service and port:
-  - 1. /app
-  - 2. /apache
+* Use the previous deployment and make it accessible using Ingress
+* Delete the existing NodePort service and create a ClusterIP service in place of it
+* Now, create an Ingress object that will route the traffic to this service and hence deployment using two paths as below. Both should map to same backend service and port:
+  * /app
+  * /apache
 
 _**Note: Make sure that Ingress Controller is installed to make ingress work.**_
 
-4. Access this deployment on web browser using Ingress Controller's IP
+* Access this deployment on web browser using Ingress Controller's IP
 
 ## Exercise 3: Case Study
 
@@ -56,10 +56,10 @@ _**Note: Make sure that Ingress Controller is installed to make ingress work.**_
 
 ### Following things have to be implemented:
 
-1. Deploy an Apache2 deployment of 2 replicas. This is your deployment1
-2. Use the sample code at Git-Hub repo: https://github.com/vistasunil/devopsIQ.git.
-3. You have to clone and containerize this code, and push it to DockerHub. Once done, deploy it on Kubernetes with 2 replicas. This is your deployment2
-4. Create two ClusterIPs services for each deployment
-5. Deploy Ingress with the following rules pointing to respective service:
-  1. /apache should point to the apache pods using its service as backend
-  2. /kapp should point to the github application pods using its service as backend
+* Deploy an Apache2 deployment of 2 replicas. This is your deployment1
+* Use the sample code at Git-Hub repo: https://github.com/vistasunil/devopsIQ.git.
+* You have to clone and containerize this code, and push it to DockerHub. Once done, deploy it on Kubernetes with 2 replicas. This is your deployment2
+* Create two ClusterIPs services for each deployment
+* Deploy Ingress with the following rules pointing to respective service:
+  * /apache should point to the apache pods using its service as backend
+  * /kapp should point to the github application pods using its service as backend
