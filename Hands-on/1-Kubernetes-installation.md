@@ -32,9 +32,9 @@
 
 ## _Steps for Both Master and Slave_
 
-_**Note: Install container runtime on both master and slave following below link:_
+_**Note: Install container runtime on both master and slave following below link:**_
 
-[**Docker official installation page for ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+[**Docker official installation page for ubuntu**](https://docs.docker.com/engine/install/ubuntu/)
 
 _**This will install docker and containerd both. Kubernetes is going to use containerd for cluster, as docker is not supported from 1.23 version onwards.**_
 
