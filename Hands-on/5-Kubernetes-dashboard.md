@@ -36,6 +36,8 @@
 
 `kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml`
 
+![image](https://user-images.githubusercontent.com/37858762/236398622-b1e53026-fc48-4ed5-b9fd-25f817c8dc96.png)
+
 ### Step 2: Edit the Kubernetes Dashboard service with this command
 
 `kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard`
