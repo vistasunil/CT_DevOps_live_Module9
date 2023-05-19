@@ -54,7 +54,7 @@ kubeadm version
 
 ### Step 1: Initialize kubeadm using the following command:
 
-`kubeadm init --apiserver-advertise-address=<ip-address-master> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU`
+`kubeadm init --apiserver-advertise-address=<control-plane-ip> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --kubernetes-version 1.24.0`
 
 ![image](https://user-images.githubusercontent.com/37858762/236329634-6ab0e61d-9b2d-40fe-9795-d1d2467c7fc9.png)
 
