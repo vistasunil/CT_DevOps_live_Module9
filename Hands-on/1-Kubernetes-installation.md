@@ -66,9 +66,9 @@ kubeadm version
 
 `kubeadm init --apiserver-advertise-address=<control-plane-ip> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --kubernetes-version 1.24.0`
 
-![image](https://user-images.githubusercontent.com/37858762/236329634-6ab0e61d-9b2d-40fe-9795-d1d2467c7fc9.png)
+<img width="938" alt="image" src="https://github.com/vistasunil/CT_DevOps_live_Module9/assets/37858762/f0c83fbc-22f7-479a-89b7-38a580533d02">
 
-![image](https://user-images.githubusercontent.com/37858762/236329650-7e0734f0-92de-4dbf-b30d-47aee1882bd0.png)
+<img width="727" alt="image" src="https://github.com/vistasunil/CT_DevOps_live_Module9/assets/37858762/28775f4a-b0eb-45d6-8172-4b236d2352a0">
 
 ### Step 2: In the output of the previous command, you will get a command, take this command and run it in the slave
 
