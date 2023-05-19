@@ -30,7 +30,7 @@ _**Note: Install container runtime Containerd on both master and slave following
 
 _**This will install docker and containerd both. Kubernetes is going to use containerd for cluster, as docker is not supported from 1.23 version onwards.**_
 
-### Step 1: Create containerd configuration
+### Step 1: Create containerd configuration on both master and slave.
 
 ```
 sudo mkdir -p /etc/containerd
