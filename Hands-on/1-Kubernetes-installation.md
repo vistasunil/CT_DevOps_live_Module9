@@ -72,7 +72,7 @@ kubeadm version
 
 ### Step 2: In the output of the previous command, you will get a command, take this command and run it in the slave
 
-![image](https://user-images.githubusercontent.com/37858762/236329676-42421c73-8afa-4a93-968b-98343cbd42d2.png)
+<img width="739" alt="image" src="https://github.com/vistasunil/CT_DevOps_live_Module9/assets/37858762/fa6b48c6-b25b-408c-a27f-2f01c97c338e">
 
 ### Step 3: On the master, exit to the normal user, and execute the following commands:
 
