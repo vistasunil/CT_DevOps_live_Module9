@@ -57,11 +57,27 @@ https://\<ip-address-of-master-or-slave:\<nodeport\>
 ```
 # Create service account
 kubectl create serviceaccount cluster-admin-dashboard-sa
+```
+### Create a secret token for above service account using below file and save it with secret.yaml:
 
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cluster-admin-dashboard-sa
+  annotations:
+    kubernetes.io/service-account.name: cluster-admin-dashboard-sa
+type: kubernetes.io/service-account-token
+```
+
+```
 # Bind ClusterAdmin role to the service account
 kubectl create clusterrolebinding cluster-admin-dashboard-sa \
   --clusterrole=cluster-admin \
   --serviceaccount=default:cluster-admin-dashboard-sa
+
+# Create the secret using above yaml file
+kubectl apply -f secret.yaml
 
 # Parse the token
 TOKEN=$(kubectl describe secret $(kubectl -n kube-system get secret | awk '/^cluster-admin-dashboard-sa-token-/{print $1}') | awk '$1=="token:"{print $2}')
