@@ -26,6 +26,8 @@
 
 ### Step 1: We will first have to install an ingress controller 'nginx'. Execute the following command:
 
+Refer [Nginx ingress controller page](https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/index.md) and refer Bare metal section:
+
 `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/baremetal/deploy.yaml`
 
 ![image](https://user-images.githubusercontent.com/37858762/236332123-b61ea671-2249-4621-9203-773ab37fbed7.png)
