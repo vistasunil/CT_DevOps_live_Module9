@@ -52,8 +52,8 @@ https://\<ip-address-of-master-or-slave:\<nodeport\>
 
 ![image](https://user-images.githubusercontent.com/37858762/236333654-ec10bcb4-8e46-4641-820c-059537e63e34.png)
 
-1. When you see "Your connection is not private...NET::ERR_CERT_INVALID" warning on Chrome,
-2. Just type "thisisunsafe" and wait.
+- 1. When you see *Your connection is not private...NET::ERR_CERT_INVALID* warning on Chrome,
+- 2. Just type *thisisunsafe* and wait.
 
 ### Step 6: For login, use the following commands:
 
