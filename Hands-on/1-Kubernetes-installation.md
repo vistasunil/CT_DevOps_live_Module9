@@ -42,29 +42,34 @@ sudo vim /etc/containerd/config.toml
 sudo systemctl restart containerd
 ```
 
-### Step 2: Run the following commands for installing kubeadm and other components as root:
+### Step 2: Run the following commands for installing kubeadm and other components as ubuntu user:
 
 ```
-apt-get update && apt-get install -y apt-transport-https curl
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+sudo apt-get update
+# apt-transport-https may be a dummy package; if so, you can skip that package
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
-cat << EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://apt.kubernetes.io/ kubernetes-xenial main
-EOF
+# If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+# sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
-apt-get update
-apt install -y kubeadm=1.24.1-00 kubelet=1.24.1-00 kubectl=1.24.1-00
+#Add the appropriate Kubernetes apt repository. This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-# use below command to check kubectl and kubeadm versions
-kubectl version --client
-kubeadm version
+# Update the apt package index, install kubelet, kubeadm and kubectl, and pin their version:
+sudo apt-get update
+sudo apt-get install -y kubeadm=1.32.7-1.1 kubelet=1.32.7-1.1 kubectl=1.32.7-1.1
+sudo apt-mark hold kubelet kubeadm kubectl
+
+# Enable the kubelet service before running kubeadm:
+sudo systemctl enable --now kubelet
 ```
 
 ## _Steps for Kubernetes Master_
 
 ### Step 1: Initialize kubeadm using the following command:
 
-`kubeadm init --apiserver-advertise-address=<control-plane-ip> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --kubernetes-version 1.24.0`
+`sudo kubeadm init --apiserver-advertise-address=<control-plane-ip> --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --kubernetes-version 1.32.7`
 
 <img width="938" alt="image" src="https://github.com/vistasunil/CT_DevOps_live_Module9/assets/37858762/f0c83fbc-22f7-479a-89b7-38a580533d02">
 
